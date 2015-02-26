@@ -22,9 +22,9 @@ public class SecondActivity extends ActionBarActivity {
         
         Log.d(TAG, "Package Name : " + getComponentName().getPackageName());
         Log.d(TAG, "Class Name : " + getComponentName().getClassName());
-        Log.d(TAG, "Main Canonical Name : " + MainActivity.class.getSimpleName());
+        Log.d(TAG, "Main Canonical Name : " + MainActivity.class.getCanonicalName());
 
-        String className = MainActivity.class.getSimpleName();
+        String className = MainActivity.class.getCanonicalName();
         
         switch (view.getId()) {
             case R.id.btn_send_badge:
@@ -45,7 +45,8 @@ public class SecondActivity extends ActionBarActivity {
                 intent.putExtra("badge_count_package_name", getComponentName().getPackageName());
                 intent.putExtra("badge_count_class_name", className);
                 // 업데이트 카운트
-                intent.putExtra("badge_count", 999999);
+                Log.d(TAG, "MAX_VALUE : " + Integer.MAX_VALUE);
+                intent.putExtra("badge_count", Integer.MAX_VALUE);
                 sendBroadcast(intent);
                 
                 break;

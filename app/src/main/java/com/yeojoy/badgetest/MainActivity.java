@@ -30,7 +30,8 @@ public class MainActivity extends ActionBarActivity {
                 intent.putExtra("badge_count_package_name", getComponentName().getPackageName());
                 intent.putExtra("badge_count_class_name", getComponentName().getClassName());
                 // 업데이트 카운트
-                intent.putExtra("badge_count", 1);
+                Log.d(TAG, "MAX_VALUE : " + Integer.MAX_VALUE);
+                intent.putExtra("badge_count", Integer.MAX_VALUE);
                 sendBroadcast(intent);
                 
                 break;
@@ -41,8 +42,9 @@ public class MainActivity extends ActionBarActivity {
                 // 패키지 네임과 클래스 네임 설정
                 intent.putExtra("badge_count_package_name", getComponentName().getPackageName());
                 intent.putExtra("badge_count_class_name", getComponentName().getClassName());
+                
                 // 업데이트 카운트
-                intent.putExtra("badge_count", 999999);
+                intent.putExtra("badge_count", 1.0);
                 sendBroadcast(intent);
                 
                 break;
